@@ -1,0 +1,33 @@
+<configuration>
+    <!-- APPENDERS -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.dragorpion" level="DEBUG" />
+    <property name="DEBUG_LEVEL" value="DEBUG" />
+
+    <logger name="io.axoniq.axonserver" level="INFO"/>
+    <logger name="org.axonframework.commandhandling" level="INFO"/>
+    <logger name="org.axonframework.serialization" level="INFO"/>
+
+    <logger name="org.springframework.jms" level="${DEBUG_LEVEL}}"/>
+    <logger name="org.springframework.jdbc" level="${DEBUG_LEVEL}}"/>
+    <logger name="org.springframework.orm.jpa" level="${DEBUG_LEVEL}}"/>
+
+
+    <logger name="javax.transaction" level="${DEBUG_LEVEL}}"/>
+    <logger name="javax.jms" level="${DEBUG_LEVEL}}"/>
+    <logger name="org.hibernate.jpa" level="${DEBUG_LEVEL}}"/>
+    <logger name="org.hibernate.SQL" level="${DEBUG_LEVEL}}"/>
+    <logger name="org.apache.activemq" level="${DEBUG_LEVEL}}"/>
+
+    <logger name="org.axonframework" level="${DEBUG_LEVEL}}"/>
+    <root>
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
+
+
